@@ -1,5 +1,5 @@
 {
-  "name": "@y_nk/cached-fetch",
+  "name": "@e1himself/cached-fetch",
   "type": "module",
   "version": "1.0.0",
   "description": "a quick implementation of cache for fetch inspired by next.js",

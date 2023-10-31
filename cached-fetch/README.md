@@ -7,14 +7,14 @@ It's a small library to cache and dedupe calls, with server rendering in mind.
 ## How does it work?
 
 ```ts
-import fetch from '@y_nk/cached-fetch'
+import fetch from '@e1himself/cached-fetch'
 await fetch('do as usual')
 ```
 
 ## Overriding global fetch
 
 ```ts
-import '@y_nk/cached-fetch/register'
+import '@e1himself/cached-fetch/register'
 await fetch('do as usual')
 ```
 
@@ -23,7 +23,7 @@ await fetch('do as usual')
 ```ts
 import { defineConfig } from 'astro/config';
 
-import cachedFetch from '@y_nk/cached-fetch/astro';
+import cachedFetch from '@e1himself/cached-fetch/astro';
 
 export default defineConfig({
   integrations: [
@@ -37,7 +37,7 @@ export default defineConfig({
 The extended api is:
 
 ```ts
-import { createCachedFetch, createDedupedFetch } from '@y_nk/cached-fetch'
+import { createCachedFetch, createDedupedFetch } from '@e1himself/cached-fetch'
 
 const fetch = createDedupedFetch(
   createCachedFetch(global.fetch)
