@@ -1,4 +1,4 @@
-import { CachePolicy } from "../types";
+import type { CachePolicy } from "../types";
 import { forceCachePolicy } from "./forceCachePolicy";
 
 /**

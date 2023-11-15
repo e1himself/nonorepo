@@ -1,4 +1,4 @@
-import { GetCacheKey } from "./types";
+import type { GetCacheKey } from "./types";
 
 function sortedObject<T extends Record<string, any>>(obj: T) {
   return Object.fromEntries(

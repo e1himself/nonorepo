@@ -1,4 +1,4 @@
-import { Store } from "../types";
+import type { Store } from "../types";
 
 export function createMemoryStore<T>(): Store<T> {
   let store = new Map<string, { value: T, date: Date }>()
