@@ -7,5 +7,4 @@ export * from './getCacheKey'
 export * from './policies'
 export * from './stores'
 
-import { createFetch } from './createFetch'
-export default createFetch()
+export { createFetch } from './createFetch'
