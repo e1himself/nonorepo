@@ -6,5 +6,6 @@ module.exports = {
     presets: [['@babel/env', { modules: 'commonjs' }]],
     plugins: [
         ['@babel/plugin-transform-modules-commonjs', { importInterop: 'none', strict: true }],
+        ['babel-plugin-add-import-extension', { extension: 'cjs' }],
     ],
 };
