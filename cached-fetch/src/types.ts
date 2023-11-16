@@ -1,4 +1,4 @@
-export type Fetch = typeof fetch
+export type Fetch = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>;
 
 export type Awaitable<T> = T | Promise<T>
 
