@@ -35,6 +35,7 @@
   },
   "scripts": {
     "start": "tsc --watch",
+    "prebuild": "rimraf dist/",
     "build": "npm run build:types && npm run build:esm && npm run build:cjs",
     "build:types": "tsc --project ./tsconfig.build.json",
     "build:esm": "babel --config-file=./babel.esm.cjs src/ --extensions=.ts --out-dir=dist/ --out-file-extension=.mjs",
@@ -51,7 +52,8 @@
     "@types/debug": "^4.1.8",
     "astro": "^2.8.3",
     "babel-plugin-add-import-extension": "^1.6.0",
-    "typescript": "^5.1.6",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2",
     "vitest": "^0.33.0"
   },
   "dependencies": {
