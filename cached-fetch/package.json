@@ -28,8 +28,8 @@
     "prebuild": "rimraf dist/",
     "build": "npm run build:types && npm run build:esm && npm run build:cjs",
     "build:types": "tsc --project ./tsconfig.build.json",
-    "build:esm": "babel --config-file=./babel.esm.cjs src/ --extensions=.ts --out-dir=dist/ --out-file-extension=.mjs",
-    "build:cjs": "babel --config-file=./babel.cjs.cjs src/ --extensions=.ts --out-dir=dist/ --out-file-extension=.cjs",
+    "build:esm": "babel --config-file=./babel.esm.cjs src/ --extensions=.ts --out-dir=dist/ --out-file-extension=.mjs --ignore='**/*.test.ts'",
+    "build:cjs": "babel --config-file=./babel.cjs.cjs src/ --extensions=.ts --out-dir=dist/ --out-file-extension=.cjs --ignore='**/*.test.ts'",
     "test": "vitest run",
     "deploy": "npm publish --access public"
   },
