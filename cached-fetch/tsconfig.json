@@ -5,7 +5,10 @@
     "strict": true,
     "module": "ES6",
     "declaration": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "moduleResolution": "node",
+    "emitDeclarationOnly": true,
     "rootDir": "src",
     "outDir": "dist",
     "skipLibCheck": true

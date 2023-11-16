@@ -1,7 +1,7 @@
 {
-  "name": "@y_nk/cached-fetch",
+  "name": "@e1himself/cached-fetch",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "a quick implementation of cache for fetch inspired by next.js",
   "homepage": "https://github.com/y-nk/nonorepo/tree/main/cached-fetch",
   "keywords": [
@@ -13,31 +13,44 @@
   ],
   "author": "Julien Barbay <julien.barbay@gmail.com>",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.cjs"
     },
     "./astro": {
       "types": "./dist/astro.d.ts",
-      "default": "./dist/astro.js"
+      "import": "./dist/astro.mjs",
+      "default": "./dist/astro.cjs"
     },
     "./register": {
       "types": "./dist/register.d.ts",
-      "default": "./dist/register.js"
+      "import": "./dist/register.mjs",
+      "default": "./dist/register.cjs"
     }
   },
   "scripts": {
     "start": "tsc --watch",
-    "build": "tsc",
+    "build": "npm run build:types && npm run build:esm && npm run build:cjs",
+    "build:types": "tsc --project ./tsconfig.build.json",
+    "build:esm": "babel --config-file=./babel.esm.cjs src/ --extensions=.ts --out-dir=dist/ --out-file-extension=.mjs",
+    "build:cjs": "babel --config-file=./babel.cjs.cjs src/ --extensions=.ts --out-dir=dist/ --out-file-extension=.cjs",
     "test": "vitest run",
     "deploy": "npm publish --access public"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
     "@types/debug": "^4.1.8",
     "astro": "^2.8.3",
+    "babel-plugin-add-import-extension": "^1.6.0",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0"
   },

@@ -1,7 +1,7 @@
 import { expect, it, vi } from 'vitest'
 
 import { createDedupedFetch } from './createDedupedFetch'
-import { Fetch } from './types'
+import type { Fetch } from './types'
 
 const url = 'http://localhost:3000/'
 

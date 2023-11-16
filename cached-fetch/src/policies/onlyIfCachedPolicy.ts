@@ -1,4 +1,4 @@
-import { CachePolicy } from "../types"
+import type { CachePolicy } from "../types"
 
 /**
  * https://developer.mozilla.org/en-US/docs/Web/API/Request/cache
