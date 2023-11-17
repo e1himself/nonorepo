@@ -19,7 +19,7 @@ export const forceCachePolicy: CachePolicy = async ({ fetch, args }, { cache, ke
   // no cache
   const promise = fetch(...args)
     .then(async res => {
-      cache.set(key, res)
+      cache.set(key, res.clone())
       return res.clone()
     })
 
